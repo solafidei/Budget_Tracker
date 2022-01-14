@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32104.313
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget_Tracker_API", "Budget_Tracker_API\Budget_Tracker_API.csproj", "{B88D7210-EEF1-4F39-B267-B12D30DA1C30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budget_Tracker_API", "Budget_Tracker_API\Budget_Tracker_API.csproj", "{B88D7210-EEF1-4F39-B267-B12D30DA1C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget_Tracker_Persistence", "Budget_Tracker_Persistence\Budget_Tracker_Persistence.csproj", "{4767E7BD-FE6F-4DD6-9AE4-9453D606DAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budget_Tracker_Persistence", "Budget_Tracker_Persistence\Budget_Tracker_Persistence.csproj", "{4767E7BD-FE6F-4DD6-9AE4-9453D606DAF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget_Tracker_Services", "Budget_Tracker_Services\Budget_Tracker_Services.csproj", "{9DDEE2E0-224E-4FF0-959A-B25F06D50A93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budget_Tracker_Services", "Budget_Tracker_Services\Budget_Tracker_Services.csproj", "{9DDEE2E0-224E-4FF0-959A-B25F06D50A93}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Budget-Tracker-Web", "Budget-Tracker-Web\Budget-Tracker-Web.esproj", "{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,12 @@ Global
 		{9DDEE2E0-224E-4FF0-959A-B25F06D50A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DDEE2E0-224E-4FF0-959A-B25F06D50A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DDEE2E0-224E-4FF0-959A-B25F06D50A93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5F0D75-7F22-4942-A19E-9EE3CD07B930}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

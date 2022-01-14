@@ -1,5 +1,4 @@
 ﻿using Budget_Tracker_Services.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Budget_Tracker_API.Controllers
@@ -15,29 +14,40 @@ namespace Budget_Tracker_API.Controllers
         }
 
         [HttpGet(Name = "AllTransaction")]
-        public IEnumerable<Budget_Tracker_Services.Models.Transaction_Model> GetAll()
+        public async Task<ActionResult<IEnumerable<Budget_Tracker_Services.Models.Transaction_Model>>> GetAll()
         {
-            return _transactionService.GetTransactions();
+            return Ok(await _transactionService.GetTransactions());
         }
 
         [HttpGet("{id}", Name = "SingleTransaction")]
-        public Budget_Tracker_Services.Models.Transaction_Model Get(int id)
+        public async Task<ActionResult<Budget_Tracker_Services.Models.Transaction_Model>> Get(int id)
         {
-            return _transactionService.GetTransaction(id);
+            return  Ok(await _transactionService.GetTransaction(id));
         }
 
         [HttpDelete("{id}", Name ="DeleteTransaction")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            _transactionService.DeleteTransaction(id);
-            return Ok();
+            if (await _transactionService.DeleteTransaction(id) > 0)
+                return Ok();
+            else
+                return StatusCode(StatusCodes.Status304NotModified);
         }
 
         [HttpPut("{id}", Name = "UpdateTransaction")]
-        public IActionResult Update(Budget_Tracker_Services.Models.Transaction_Model transaction)
+        public async Task<IActionResult> Update(Budget_Tracker_Services.Models.Transaction_Model transaction)
         {
-            _transactionService.UpdateTransaction(transaction);
-            return Ok();
+            if (await _transactionService.UpdateTransaction(transaction) > 0)
+                return Ok();
+            else
+                return StatusCode(StatusCodes.Status304NotModified);
+        }
+
+
+        [HttpPost(Name = "AddTransaction")]
+        public async Task<IActionResult> Add(Budget_Tracker_Services.Models.Transaction_Model transaction)
+        {
+            return Ok(await _transactionService.AddTransaction(transaction));
         }
     }
 }

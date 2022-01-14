@@ -9,10 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<Budget_TrackerContext>(options => 
-        options.UseSqlServer("Server =.;Database=Budget_Tracker;Trusted_Connection=True"));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddTransient<IRepository, Repository>();
+builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
 builder.Services.AddTransient<ITransactionService, TransactionService>();
+builder.Services.AddTransient<IAccountRepository, AccountRepository>();
+builder.Services.AddTransient<IAccountService, AccountService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

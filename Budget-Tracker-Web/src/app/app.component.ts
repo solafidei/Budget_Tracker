@@ -1,21 +1,36 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   public forecasts?: WeatherForecast[];
+  //public transactions: Transaction[] = [];
 
-  constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
+  constructor(private http: HttpClient) {
+    //http.get<WeatherForecast[]>('/api/weatherforecast').subscribe(result => {
+    //  this.forecasts = result;
+    //}, error => console.error(error));
   }
 
   title = 'Budget-Tracker-Web';
+
+  ngOnInit() {
+    // this.getTransactionList().subscribe(result => {
+    //   this.transactions = result;
+    //   console.log(this.transactions);
+
+    // }, (error) => {
+    //   console.log(error);
+    // });
+  }
+  //getTransactionList(): Observable<Transaction[]> {
+  //  return this.http.get<Transaction[]>('/api/transaction');
+  //}
 }
 
 interface WeatherForecast {

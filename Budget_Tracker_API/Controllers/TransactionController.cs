@@ -13,13 +13,13 @@ namespace Budget_Tracker_API.Controllers
             _transactionService = transactionService;
         }
 
-        [HttpGet(Name = "AllTransaction")]
-        public async Task<ActionResult<IEnumerable<Budget_Tracker_Services.Models.Transaction_Model>>> GetAll()
+        [HttpGet("{accountID}", Name = "AllTransactionByAccount")]
+        public async Task<ActionResult<IEnumerable<Budget_Tracker_Services.Models.Transaction_Model>>> GetAll(int accountID)
         {
-            return Ok(await _transactionService.GetTransactions());
+            return Ok(await _transactionService.GetTransactionsByAccount(accountID));
         }
 
-        [HttpGet("{id}", Name = "SingleTransaction")]
+        [HttpGet("entry/{id}", Name = "SingleTransaction")]
         public async Task<ActionResult<Budget_Tracker_Services.Models.Transaction_Model>> Get(int id)
         {
             return  Ok(await _transactionService.GetTransaction(id));

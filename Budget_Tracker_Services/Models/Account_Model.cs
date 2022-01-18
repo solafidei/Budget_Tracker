@@ -6,5 +6,6 @@
         public int AccountNumber { get; set; }
         public decimal RunningBalance { get; set; }
         public int? ProductId { get; set; }
+        public Product_Model Product { get; set; }
     }
 }

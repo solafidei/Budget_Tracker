@@ -1,4 +1,4 @@
-﻿namespace Budget_Tracker_API.Models
+﻿namespace Budget_Tracker_Services.Models
 {
     public class Bank_Model
     {

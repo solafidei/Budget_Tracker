@@ -1,9 +1,12 @@
 const PROXY_CONFIG = [
   {
     context: [
-      "transaction",
+      "/api/transaction",
+      "/api/account",
+      "/api/bank",
+      "/api/product"
     ],
-    target: "https://localhost:5074",
+    target: "https://localhost:5075",
     secure: false
   }
 ]

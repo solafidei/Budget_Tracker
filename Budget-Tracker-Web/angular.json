@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -76,6 +76,7 @@
           },
           "defaultConfiguration": "development",
           "options": {
+            "browserTarget": "Budget-Tracker-Web:build:development",
             "proxyConfig": "src/proxy.conf.js"
           }
         },
@@ -97,7 +98,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }

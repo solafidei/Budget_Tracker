@@ -1,0 +1,40 @@
+<ngx-spinner type="ball-fussion"></ngx-spinner>
+<mat-accordion multi="false" [togglePosition]="'before'">
+  <mat-expansion-panel *ngFor="let account of accounts">
+    <mat-expansion-panel-header>
+      <ul>
+        <li>
+          <h3>{{account.product?.name}}</h3>
+        </li>
+      </ul>
+    </mat-expansion-panel-header>
+    <div class="panel-content">
+      <p>
+        Account Number: {{account.accountNumber}}
+      </p>
+      <p>
+        Running Balance: {{account.runningBalance}}
+      </p>
+    </div>
+    <mat-action-row>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button [routerLink]="['/account', account?.id]" mat-menu-item>
+          <mat-icon>info</mat-icon>
+          <span>View</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </mat-action-row>
+  </mat-expansion-panel>
+  <div class="add-circle">
+    <a (click)="openDialog()" routerLinkActive="mat-accent">
+      <mat-icon class="add-icon">add_circle_outline</mat-icon>
+    </a>
+  </div>
+</mat-accordion>

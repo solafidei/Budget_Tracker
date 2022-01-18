@@ -4,7 +4,7 @@ namespace Budget_Tracker_Services.Services
 {
     public interface ITransactionService
     {
-        public Task<IEnumerable<Transaction_Model>> GetTransactions();
+        public Task<IEnumerable<Transaction_Model>> GetTransactionsByAccount(int accountID);
         public Task<Transaction_Model> GetTransaction(int id);
         public Task<int> DeleteTransaction(int id);
         public Task<int> UpdateTransaction(Transaction_Model transaction);

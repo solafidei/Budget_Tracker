@@ -23,9 +23,10 @@ namespace Budget_Tracker_Persistence.Repositories
             return await _dbContext.Transaction.FirstOrDefaultAsync(t => t.Id == id);
         }
 
-        public async Task<IEnumerable<Transaction>> GetTransactions()
+        public async Task<IEnumerable<Transaction>> GetTransactionsByAccount(int accountID)
         {
-            return await _dbContext.Transaction.ToListAsync();
+            return await _dbContext.Transaction.Where(t => t.AccountId == accountID)
+                .Include(t => t.Product).Include(t => t.Bank).Include(t => t.TransactionType).ToListAsync();
         }
 
         public Task<int> UpdateTransaction(Transaction transaction)

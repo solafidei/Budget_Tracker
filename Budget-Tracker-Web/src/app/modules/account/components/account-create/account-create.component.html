@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>New Account</h2>
+<mat-dialog-content class="mat-typography">
+<form (submit)="onCreateAccount(accountForm)" #accountForm="ngForm">
+  <mat-form-field>
+    <mat-label>Bank</mat-label>
+    <mat-select [ngModel] name="bankDropDown" (selectionChange)="getProduct(bank.value)" required #bank="ngModel">
+      <mat-option *ngFor="let bank of banks" [value]="bank.id">
+        {{bank.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="bank?.value != null">
+    <mat-label>Product Name</mat-label>
+    <mat-select ngModel name="productDropDown" required #product="ngModel">
+      <mat-option *ngFor="let product of products" [value]="product.id">
+        {{product.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="bank?.value != null">
+    <input matInput type="text" ngModel name="accountNumber" placeholder="Account Number" required #accountNumber="ngModel">
+  </mat-form-field>
+  <mat-form-field *ngIf="bank?.value != null">
+    <input matInput type="number" ngModel name="runningBalance" placeholder="Running Balance" required #runningBalance="ngModel">
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button>Create</button>
+  </div>
+</form>
+</mat-dialog-content>

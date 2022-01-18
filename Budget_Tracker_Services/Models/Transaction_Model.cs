@@ -11,5 +11,9 @@
         public int? AccountId { get; set; }
         public int? BankId { get; set; }
         public int? ProductId { get; set; }
+        public Bank_Model Bank { get; set; }
+        public Product_Model Product { get; set; }
+        public Account_Model Account { get; set; }
+        public TransactionType_Model TransactionType { get; set; }
     }
 }

@@ -1,0 +1,12 @@
+<mat-toolbar color="primary"><span><a routerLink="">Budget Tracker</a></span>
+
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <button mat-button routerLink="/accounts" [matMenuTriggerFor]="accountMenu">Accounts</button>
+      <mat-menu #accountMenu yPosition="below">
+        <button mat-menu-item routerLink="/accounts" routerLinkActive="mat-accent">View Accounts</button>
+      </mat-menu>
+    </li>
+  </ul>
+</mat-toolbar>

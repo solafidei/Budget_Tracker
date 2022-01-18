@@ -20,7 +20,7 @@ namespace Budget_Tracker_Persistence.Repositories
 
         public async Task<IEnumerable<Account>> GetAccounts()
         {
-            return await _dbContext.Account.ToListAsync();
+            return await _dbContext.Account.Include(a => a.Product).ToListAsync();
         }
     }
 }

@@ -13,9 +13,9 @@ namespace Budget_Tracker_Services.Services
             _repository = repository;
             _mapper= mapper;
         }
-        public async Task<IEnumerable<Transaction_Model>> GetTransactions()
+        public async Task<IEnumerable<Transaction_Model>> GetTransactionsByAccount(int accountID)
         {
-            return _mapper.Map<IEnumerable<Transaction_Model>>(await _repository.GetTransactions());
+            return _mapper.Map<IEnumerable<Transaction_Model>>(await _repository.GetTransactionsByAccount(accountID));
         }
 
         public async Task<Transaction_Model> GetTransaction(int id)
